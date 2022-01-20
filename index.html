@@ -1167,6 +1167,7 @@
                 console.log(med[0].RenalDosing);
                 if (med[0].RenalDosing != 'DOC') {
                     var renaltxt = '<strong class="text-primary">Renal Dosing</strong><br />' + $('#' + med[0].RenalDosing).html();
+                    console.log(renaltxt);
                     $('.renal').html(renaltxt);
                     $('.renal').removeClass('d-none');
                 }
