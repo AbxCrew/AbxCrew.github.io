@@ -1,0 +1,85 @@
+﻿body {
+    font-family: 'Nunito', sans-serif;
+    
+    -webkit-text-size-adjust:auto;
+    
+}
+
+img { 
+-ms-interpolation-mode: bicubic; 
+image-rendering: optimizeQuality;
+}
+
+h1{
+    font-size:4vh;
+}
+h2{
+    font-size:3.5vh;
+}
+h3{
+    font-size:2.75vh;
+}
+h4{
+    font-size:2.5vh;
+}
+
+#background{
+    background-image: url("Images/bug.png");
+    width:100%;
+    background-size: cover;
+}
+
+a.drp{
+    text-decoration:none;
+}
+.mid{
+     position:absolute;
+     top:50%;
+}
+.content{
+        padding-top:50px;
+        min-height:100vh;
+}
+.tile{
+    padding-bottom:1%;
+}
+
+.unk {
+    opacity: 0.4;
+    filter: alpha(opacity=40);
+}
+
+.heading{
+    background-color:#3399FF;
+    color:white
+}
+.title{
+    background-image:url(Images/banner.jpg);
+    color:white;
+    background-size:cover;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #cbcaca; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #8d8c8c
+}
+/* MAGIC HAPPENS HERE */
+.scroll-bar-wrap:hover .cover-bar {
+   opacity: 0;
+  -webkit-transition: all .5s;
+}
