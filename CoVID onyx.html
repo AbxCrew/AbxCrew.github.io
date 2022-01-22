@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="FA/css/all.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <style>
+        @media only screen and (min-width: 300px) {
+            html {
+                font-size: 0.7em;
+            }
+        }
+
+        @media only screen and (min-width: 768px) {
+            html {
+                font-size: 0.75em;
+            }
+        }
+
+        @media only screen and (min-width: 992px) {
+            html {
+                font-size: 0.85em;
+            }
+        }
+
+        @media only screen and (min-width: 1200px) {
+            html {
+                font-size: 0.9em;
+            }
+        }
+        body {
+            font-family: 'Nunito', sans-serif;
+            -webkit-text-size-adjust: auto;
+        }
+
+        h1 {
+            font-size: 3.5vh;
+        }
+
+        h2 {
+            font-size: 3vh;
+        }
+
+        h3 {
+            font-size: 2.5vh;
+        }
+
+        h4 {
+            font-size: 2.25vh;
+        }
+
+        a.drp {
+            text-decoration: none;
+        }
+        /* width */
+        ::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #cbcaca;
+        }
+
+            /* Handle on hover */
+            ::-webkit-scrollbar-thumb:hover {
+                background: #8d8c8c
+            }
+        /* MAGIC HAPPENS HERE */
+        .scroll-bar-wrap:hover .cover-bar {
+            opacity: 0;
+            -webkit-transition: all .5s;
+        }
+
+        .OslerNavy {
+            background-color: rgb(0,82,155);
+            color: white
+        }
+
+        .OslerBlue {
+            background-color: rgb(19,181,234);
+            color: white
+        }
+
+        .OslerPurple {
+            background-color: rgb(178,143,194);
+            color: white
+        }
+
+        .OslerNavy-text {
+            color: rgb(0,82,155);
+        }
+
+        .OslerBlue-text {
+            color: rgb(19,181,234);
+        }
+
+        .OslerPurple-text {
+            color: rgb(178,143,194);
+        }
+    </style>
+    <div class="container-fluid pb-5">
+        <div class="row justify-content-between">
+
+            <div class="col"><a href="https://4d9cc926-c314-41ac-908e-19322efdf1db.filesusr.com/ugd/b5d454_1ceb1f44afc54130b64ca4a863026c4c.pdf" target="_blank" role="button" class="drp btn OslerBlue-text"><i class="fas fa-pills"></i>&nbsp;Drug info</a></div>
+            <div class="col-8 text-center">
+                <h2 class="fw-bold OslerNavy-text">COVID-19 Treatment Algorithm<br /></h2><sub class="text-muted">Updated January 18<sup>th</sup>&nbsp;2022</sub>
+            </div>
+            <div class="col text-end">
+                <a class="btn OslerPurple-text" data-bs-toggle="modal" data-bs-target="#disclaimer">
+                    <i class="fas fa-question-circle"></i>&nbsp;About
+                </a>
+
+            </div>
+
+        </div>
+        <div class="row justify-content-center pt-5">
+            <div class="col-12 col-lg-6">
+                <div class="row justify-content-center">
+                    <div class="col-12 text-center">
+                        <h3 class="fw-bold">Select Care Setting</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 text-center justify-content-center">
+                        <div class="btn-group w-100" role="group" aria-label="Basic radio toggle button group">
+                            <input type="radio" class="btn-check" name="txloc" id="b1" autocomplete="off">
+                            <label class="btn btn-outline-primary btn-lg" for="b1"><i class="fas fa-clinic-medical"></i>&nbsp;Outpatient</label>
+
+                            <input type="radio" class="btn-check" name="txloc" id="b2" autocomplete="off">
+                            <label class="btn btn-outline-primary btn-lg" for="b2"><i class="fas fa-hospital"></i>&nbsp;Hospital</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center pt-5">
+            <div class="col-12 col-xl-10 col-xxl-8">
+                <div class="card maintx d-none">
+                    <div class="card-header text-center">
+                        <h3 class="fw-bold headertx"></h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-12 text-center justify-content-center">
+                                <ul class="nav nav-pills nav-justified mb-3 txin d-none align-items-center align-middle" id="inpills-tab" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link inpill" id="noox-tab" data-bs-toggle="pill" data-bs-target="#pills-tx" type="button" role="tab" aria-controls="pills-tx" aria-selected="false">No new or additional oxygen support</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link inpill" id="lowox-tab" data-bs-toggle="pill" data-bs-target="#pills-modtx" type="button" role="tab" aria-controls="pills-modtx" aria-selected="false">Low-flow oxygen</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link inpill" id="hiox-tab" data-bs-toggle="pill" data-bs-target="#pills-sevtx" type="button" role="tab" aria-controls="pills-sevtx" aria-selected="false">High-flow oxygen or invasive mechanical ventilation</button>
+                                    </li>
+                                </ul>
+                                <div class="tab-content" id="pills-tabContent">
+                                    <div class="tab-pane fade" id="pills-tx" role="tabpanel" aria-labelledby="noox-tab">
+                                        <div class="row justify-content-center">
+                                            <div class="col-12 col-md-10 col-xl-8">
+                                                <div class="row mb-2 outtimer">
+                                                    <div class="col-12 col-md-5 text-center text-md-end align-middle">
+                                                        Duration of Illness
+                                                    </div>
+                                                    <div class="col-12 col-md-4 col-xl-5 text-start">
+                                                        <div class="btn-group w-100" role="group" aria-label="Basic radio toggle button group">
+                                                            <input type="radio" class="btn-check topouttxopt outtimei" name="outtime" id="outtime1" autocomplete="off">
+                                                            <label class="btn btn-outline-primary" for="outtime1">7 days or less</label>
+
+                                                            <input type="radio" class="btn-check topouttxopt outtimei" name="outtime" id="outtime2" autocomplete="off">
+                                                            <label class="btn btn-outline-primary" for="outtime2">More than 7 days</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-2 subr imr d-none">
+                                                    <div class="col-12 col-md-5 text-center text-md-end align-middle">
+                                                        Immunocompromised&nbsp;<a role="button" class="OslerPurple-text" data-bs-toggle="modal" data-bs-target="#immunomodal"><i class="fas fa-question-circle"></i></a>
+                                                    </div>
+                                                    <div class="col-12 col-md-4 col-xl-5 text-start">
+                                                        <div class="btn-group w-100" role="group" aria-label="Basic radio toggle button group">
+                                                            <input type="radio" class="btn-check outtxopt" name="imm" id="imm1" autocomplete="off">
+                                                            <label class="btn btn-outline-primary" for="imm1">Yes</label>
+
+                                                            <input type="radio" class="btn-check outtxopt" name="imm" id="imm2" autocomplete="off">
+                                                            <label class="btn btn-outline-primary" for="imm2">No</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-2 d-none subr vaxr">
+                                                    <div class="col-12 col-md-5 text-center text-md-end align-middle">
+                                                        Vaccination Status
+                                                    </div>
+                                                    <div class="col-12 col-md-4 col-xl-5 text-start">
+                                                        <div class="btn-group w-100" role="group" aria-label="Basic radio toggle button group">
+                                                            <input type="radio" class="btn-check vaxi outtxopt" name="vax" id="vax1" autocomplete="off">
+                                                            <label class="btn btn-outline-primary" for="vax1">Vaccinated (2 doses)</label>
+
+                                                            <input type="radio" class="btn-check vaxi outtxopt" name="vax" id="vax2" autocomplete="off">
+                                                            <label class="btn btn-outline-primary" for="vax2">Unvaccinated</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-2 subr rfr d-none">
+                                                    <div class="col-12 col-md-5 text-center text-md-end align-middle">
+                                                        One or more risk factors or Indigenous?&nbsp;<a role="button" class="OslerPurple-text" data-bs-toggle="modal" data-bs-target="#riskmodal"><i class="fas fa-question-circle"></i></a>
+                                                    </div>
+                                                    <div class="col-12 col-md-4 col-xl-5 text-start">
+                                                        <div class="btn-group w-100" role="group" aria-label="Basic radio toggle button group">
+                                                            <input type="radio" class="btn-check rfi outtxopt" name="rf" id="rf1" autocomplete="off">
+                                                            <label class="btn btn-outline-primary" for="rf1">Yes</label>
+
+                                                            <input type="radio" class="btn-check rfi outtxopt" name="rf" id="rf2" autocomplete="off">
+                                                            <label class="btn btn-outline-primary" for="rf2">No</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-2 subr ar d-none">
+                                                    <div class="col-12 col-md-5 text-center text-md-end align-middle">
+                                                        Age
+                                                    </div>
+                                                    <div class="col-12 col-md-4 col-xl-5 text-start">
+                                                        <div class="btn-group w-100" role="group" aria-label="Basic radio toggle button group">
+                                                            <input type="radio" class="btn-check ai outtxopt" name="age" id="age1" autocomplete="off">
+                                                            <label class="btn btn-outline-primary" for="age1">60 and over</label>
+
+                                                            <input type="radio" class="btn-check ai outtxopt" name="age" id="age2" autocomplete="off">
+                                                            <label class="btn btn-outline-primary" for="age2">50 and over</label>
+
+                                                            <input type="radio" class="btn-check ai outtxopt" name="age" id="age3" autocomplete="off">
+                                                            <label class="btn btn-outline-primary" for="age3">Under 50</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="row d-none">
+                                            <div class="col-5"></div>
+                                            <div class="col-4">
+                                                <ul class="nav nav-pills mb-3 nav-justified txout" id="outpills-tab" role="tablist">
+                                                    <li class="nav-item" role="presentation">
+                                                        <button class="nav-link outpill" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-notx" type="button" role="tab" aria-controls="pills-notx" aria-selected="false"><i class="far fa-calendar-alt"></i>&nbsp;Symptomatic for more than 7 days</button>
+                                                    </li>
+                                                    <li class="nav-item" role="presentation">
+                                                        <button class="nav-link outpill" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-mildtx" type="button" role="tab" aria-controls="pills-mildtx" aria-selected="false"><i class="far fa-calendar-alt"></i>&nbsp;Symptomatic for 7 days or less</button>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="tab-content" id="pill-tabContent2">
+                                            <div class="tab-pane fade" id="pills-notx" role="tabpanel" aria-labelledby="pills-home-tab">
+
+                                                <div class="alert alert-primary d-flex align-items-center" role="alert">
+                                                    <i class="bi flex-shrink-0 me-2 fas fa-exclamation-circle"></i>
+                                                    <div class="fw-bold">
+                                                        Supportive Management
+                                                    </div>
+                                                </div>
+                                                <div class="row justify-content-center">
+                                                    <div class="col-12 text-start">
+                                                        There are no current therapies available based on the selected criteria. Supportive management and self-monitoring of symptoms is recommended.
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="tab-pane fade" id="pills-mildtx" role="tabpanel" aria-labelledby="pills-profile-tab">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="pills-modtx" role="tabpanel" aria-labelledby="lowox-tab">
+                                        <div class="row justify-content-center">
+                                            <div class="col-12 col-md-10 col-xl-8">
+                                                <div class="row mb-2 oxyr">
+                                                    <div class="col-12 col-md-5 text-center text-md-end align-middle">
+                                                        FiO2
+                                                    </div>
+                                                    <div class="col-12 col-md-4 col-xl-5 text-start">
+                                                        <div class="btn-group w-100" role="group" aria-label="Basic radio toggle button group">
+                                                            <input type="radio" class="btn-check topintxopt intxopt" name="oxy" id="oxy1" autocomplete="off">
+                                                            <label class="btn btn-outline-primary" for="oxy1">Less than 40%</label>
+
+                                                            <input type="radio" class="btn-check topintxopt intxopt" name="oxy" id="oxy2" autocomplete="off">
+                                                            <label class="btn btn-outline-primary" for="oxy2">40% or more</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-2 subr crpr d-none">
+                                                    <div class="col-12 col-md-5 text-center text-md-end align-middle">
+                                                        C-reactive protein
+                                                    </div>
+                                                    <div class="col-12 col-md-4 col-xl-5 text-start">
+                                                        <div class="btn-group w-100" role="group" aria-label="Basic radio toggle button group">
+                                                            <input type="radio" class="btn-check crpi intxopt" name="crp" id="crp1" autocomplete="off">
+                                                            <label class="btn btn-outline-primary" for="crp1">Less than 75 mg/L</label>
+
+                                                            <input type="radio" class="btn-check intxopt crpi" name="crp" id="crp2" autocomplete="off">
+                                                            <label class="btn btn-outline-primary" for="crp2">75 mg/L or more</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-2 subr txtimer d-none">
+                                                    <div class="col-12 col-md-5 text-center text-md-end align-middle">
+                                                        Duration of Illness
+                                                    </div>
+                                                    <div class="col-12 col-md-4 col-xl-5 text-start">
+                                                        <div class="btn-group w-100" role="group" aria-label="Basic radio toggle button group">
+                                                            <input type="radio" class="btn-check intxopt txtimei" name="txtime" id="txtime1" autocomplete="off">
+                                                            <label class="btn btn-outline-primary" for="txtime1">7 days or less</label>
+
+                                                            <input type="radio" class="btn-check intxopt txtimei" name="txtime" id="txtime2" autocomplete="off">
+                                                            <label class="btn btn-outline-primary" for="txtime2">More than 7 days</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-2 subr hosptimer d-none">
+                                                    <div class="col-12 col-md-5 text-center text-md-end align-middle">
+                                                        Within 14 days of hospital admission <strong>OR</strong> within 14 days of nosocomial COVID infection
+                                                    </div>
+                                                    <div class="col-12 col-md-4 col-xl-5 text-start">
+                                                        <div class="btn-group w-100" role="group" aria-label="Basic radio toggle button group">
+                                                            <input type="radio" class="btn-check intxopt hosptimei" name="hosptime" id="hosptime1" autocomplete="off">
+                                                            <label class="btn btn-outline-primary" for="hosptime1">Yes</label>
+
+                                                            <input type="radio" class="btn-check intxopt hosptimei" name="hosptime" id="hosptime2" autocomplete="off">
+                                                            <label class="btn btn-outline-primary" for="hosptime2">No</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="pills-sevtx" role="tabpanel" aria-labelledby="hiox-tab">
+                                        <div class="row justify-content-center">
+                                            <div class="col-12 col-md-10 col-xl-8">
+                                                <div class="row mb-2 sevhosptimer">
+                                                    <div class="col-12 col-md-5 text-center text-md-end align-middle">
+                                                        Within 14 days of hospital admission <strong>OR</strong> within 14 days of nosocomial COVID infection
+                                                    </div>
+                                                    <div class="col-12 col-md-4 col-xl-5 text-start">
+                                                        <div class="btn-group w-100" role="group" aria-label="Basic radio toggle button group">
+                                                            <input type="radio" class="btn-check topintxopt sevhosptimei" name="sevhosptime" id="sevhosptime1" autocomplete="off">
+                                                            <label class="btn btn-outline-primary" for="sevhosptime1">Yes</label>
+
+                                                            <input type="radio" class="btn-check topintxopt sevhosptimei" name="sevhosptime" id="sevhosptime2" autocomplete="off">
+                                                            <label class="btn btn-outline-primary" for="sevhosptime2">No</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row justify-content-center pt-4">
+            <div class="col-12 col-xl-10 col-xxl-8">
+                <div class="card RemIn intx d-none">
+                    <div class="card-body">
+                        <h3 class="card-title fw-bold">Treatment Options</h3>
+                        <hr />
+                        <div class="alert alert-success d-flex align-items-center" role="alert">
+                            <div class="d-flex"><i class="fas fa-check-circle me-2"></i></div>
+                            <div class="d-flex text-start">
+                                <p class="m-0 p-0">
+                                    <span class="fw-bold">Remdesivir</span>&nbsp;200 mg IV x 1 dose, then 100 mg IV daily x 4 days
+                            </div>
+                        </div>
+                        <div class="alert alert-success d-flex align-items-center" role="alert">
+                            <div class="d-flex"><i class="fas fa-check-circle me-2"></i></div>
+                            <div class="d-flex text-start">
+                                <p class="m-0 p-0"><span class="fw-bold">Dexamethasone</span>&nbsp;6 mg PO/IV daily x 10 days <span class="text-muted">(or until discharge)</span></p>
+                            </div>
+                        </div>
+
+                        <div class="alert alert-danger d-flex align-items-center" role="alert">
+                            <div class="d-flex"><i class="fas fa-exclamation-circle me-2"></i></div>
+                            <div class="d-flex text-start">
+                                <p class="m-0 p-0">
+                                    Bacterial co-infection is uncommon in COVID-19 pneumonia at presentation.&nbsp;<span class="fw-bold">Do not add empiric antibiotics</span>&nbsp;unless a bacterial infection is strongly suspected. For more information, see <a href="Docs/COVID/AbxCOVID.pdf" target="_blank" class="fw-bold drp">Osler's guidance on antimicrobial therapy in COVID-19 pneumonia.</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-12 text-start">
+                                Please complete approval form for <a href="https://covidcriticalcare.ca/wp-content/uploads/3_ModIll_Rem.pdf" class="drp text-primary fw-bold" target="_blank">Remdesivir in Moderate COVID-19 Illness</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card Toci intx d-none">
+                    <div class="card-body">
+                        <h3 class="card-title fw-bold">Treatment Options</h3>
+                        <hr />
+                        <div class="alert alert-success align-items-center mb-1" role="alert">
+                            <div class="d-flex flex-row align-items-center align-middle">
+                                <p class="align-items-center align-middle mb-0">
+                                    <i class="fas fa-check-circle me-2"></i>
+                                </p>
+
+                                <p class="text-start m-0 p-0">
+                                    <span class="fw-bold">Tocilizumab</span>&nbsp;400 mg IV x 1 dose&nbsp;<small class="text-muted">Sarilumab 400 mg IV x 1 dose should be used if Tocilizumab is unavailable</small><br />
+                                </p>
+                            </div>
+                            <div class="row align-items-center align-middle p-0 m-0">
+                                <div class="col-5 px-0 mx-0">
+                                    <hr />
+                                </div>
+                                <div class="col-2 fw-bold text-center">OR</div>
+                                <div class="col-5 mx-0 px-0">
+                                    <hr />
+                                </div>
+                            </div>
+                            <div class="d-flex flex-row align-items-center align-middle mb-2">
+                                <p class="align-items-center align-middle mb-0">
+                                    <i class="fas fa-check-circle me-2"></i>
+                                </p>
+                                <p class="m-0 p-0 text-start">
+                                    <span class="fw-bold">Baricitinib</span>&nbsp;4 mg PO daily x 14 days (or until discharge) <small class="text-muted">&nbsp;if Tocilizumab and Sarilumab are unavailable</small>
+                                </p>
+                            </div>
+                            <div class="alert alert-warning d-flex align-items-center mb-1" role="alert">
+                                <div class="d-flex"><i class="fas fa-exclamation-circle me-2"></i></div>
+                                <div class="d-flex text-start">
+                                    <p class="m-0 p-0">
+                                        Given current supply challenges, <span class="fw-bold">Tocilizumab</span>&nbsp;and&nbsp;<span class="fw-bold">Sarilumab</span>&nbsp;are currently being prioritized for pregnant individuals and individuals in renal failure (eGFR less than 15 mL/minute/1.73 m<sup>2</sup>) or receiving dialysis.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="alert alert-success d-flex align-items-center" role="alert">
+                            <div class="d-flex"><i class="fas fa-check-circle me-2"></i></div>
+                            <div class="d-flex text-start">
+                                <p class="m-0 p-0"><span class="fw-bold">Dexamethasone</span>&nbsp;6 mg PO/IV daily x 10 days <span class="text-muted">(or until discharge)</span></p>
+                            </div>
+                        </div>
+
+                        <div class="alert alert-danger d-flex align-items-center" role="alert">
+                            <div class="d-flex"><i class="fas fa-exclamation-circle me-2"></i></div>
+                            <div class="d-flex text-start">
+                                <p class="m-0 p-0">
+                                    Bacterial co-infection is uncommon in COVID-19 pneumonia at presentation.&nbsp;<span class="fw-bold">Do not add empiric antibiotics</span>&nbsp;unless a bacterial infection is strongly suspected. For more information, see <a href="Docs/COVID/AbxCOVID.pdf" target="_blank" class="fw-bold drp">Osler's guidance on antimicrobial therapy in COVID-19 pneumonia.</a>
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="row justify-content-center">
+                            <div class="col-12 text-start">
+                                <span class="fw-bold">Baricitinib</span>
+                                <ul>
+                                    <li>Should only be used when <span class="fw-bold">Tocilizumab</span>&nbsp;and&nbsp;<span class="fw-bold">Sarilumab</span>&nbsp;are unavailable</li>
+                                    <li>
+                                        Renal dose adjustment is required <ul>
+                                            <li>eGFR 30-59 mL/minute/1.73 m<sup>2</sup> - 2 mg PO daily</li>
+                                            <li>eGFR 15-29 mL/minute/1.73 m<sup>2</sup> - 2 mg PO q48h</li>
+                                            <li>Avoid in individuals with eGFR less than 15 mL/minute/1.73 m<sup>2</sup></li>
+                                        </ul>
+                                    </li>
+                                    <li>Avoid in individuals who have received IL-6 inhibitors (i.e. Tocilizumab, Sarilumab)</li>
+                                </ul>
+                                Please complete approval form for <a href="https://covidcriticalcare.ca/wp-content/uploads/2_ModIll_Immmod.pdf" class="drp text-primary fw-bold" target="_blank">Immunomodulatory Agents in Moderate COVID-19 Illness</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card TociSev intx d-none">
+                    <div class="card-body">
+                        <h3 class="card-title fw-bold">Treatment Options</h3>
+                        <hr />
+                        <div class="alert alert-success align-items-center mb-1" role="alert">
+                            <div class="d-flex flex-row align-items-center align-middle">
+                                <p class="align-items-center align-middle mb-0">
+                                    <i class="fas fa-check-circle me-2"></i>
+                                </p>
+
+                                <p class="text-start m-0 p-0">
+                                    <span class="fw-bold">Tocilizumab</span>&nbsp;400 mg IV x 1 dose&nbsp;<small class="text-muted">Sarilumab 400 mg IV x 1 dose should be used if Tocilizumab is unavailable</small><br />
+                                </p>
+                            </div>
+                            <div class="row align-items-center align-middle p-0 m-0">
+                                <div class="col-5 px-0 mx-0">
+                                    <hr />
+                                </div>
+                                <div class="col-2 fw-bold text-center">OR</div>
+                                <div class="col-5 mx-0 px-0">
+                                    <hr />
+                                </div>
+                            </div>
+                            <div class="d-flex flex-row align-items-center align-middle mb-2">
+                                <p class="align-items-center align-middle mb-0">
+                                    <i class="fas fa-check-circle me-2"></i>
+                                </p>
+                                <p class="m-0 p-0 text-start">
+                                    <span class="fw-bold">Baricitinib</span>&nbsp;4 mg PO daily x 14 days (or until discharge if sooner) <small class="text-muted">&nbsp;if Tocilizumab and Sarilumab are unavailable</small>
+                                </p>
+                            </div>
+                            <div class="alert alert-warning d-flex align-items-center mb-0" role="alert">
+                                <div class="d-flex"><i class="fas fa-exclamation-circle me-2"></i></div>
+                                <div class="d-flex text-start">
+                                    <p class="m-0 p-0">
+                                        Given current supply challenges, <span class="fw-bold">Tocilizumab</span>&nbsp;and&nbsp;<span class="fw-bold">Sarilumab</span>&nbsp;are currently being prioritized for pregnant individuals and individuals in renal failure (eGFR less than 15 mL/minute/1.73 m<sup>2</sup>) or receiving dialysis.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="alert alert-success align-items-center mb-1" role="alert">
+                            <div class="d-flex flex-row align-items-center align-middle mb-2">
+                                <p class="align-items-center align-middle mb-0">
+                                    <i class="fas fa-check-circle me-2"></i>
+                                </p>
+                                <p class="m-0 p-0 text-start">
+                                    <span class="fw-bold">Dexamethasone</span>&nbsp;6 mg PO/IV daily x 10 days <span class="text-muted">(or until discharge if sooner)</span>
+                                </p>
+                            </div>
+
+
+                            <div class="alert alert-warning d-flex align-items-center mb-1" role="alert">
+                                <div class="d-flex"><i class="fas fa-exclamation-circle me-2"></i></div>
+                                <div class="d-flex text-start">
+                                    <p class="m-0 p-0">
+                                        <span class="fw-bold">Dexamethasone</span>&nbsp;12 mg PO/IV daily may be considered in patients who are unable to receive IL-6 inhibitors (Tocilizumab, Sarilumab) or Baricitinib.&nbsp;<span class="fw-bold">This recommendation is based on low certainty evidence and should only be considered in the setting of widespread shortages of IL-6 inhibitors and baricitinib.</span>
+                                    </p>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <div class="alert alert-danger d-flex align-items-center" role="alert">
+                            <div class="d-flex"><i class="fas fa-exclamation-circle me-2"></i></div>
+                            <div class="d-flex text-start">
+                                <p class="m-0 p-0">
+                                    Bacterial co-infection is uncommon in COVID-19 pneumonia at presentation.&nbsp;<span class="fw-bold">Do not add empiric antibiotics</span>&nbsp;unless a bacterial infection is strongly suspected. For more information, see <a href="Docs/COVID/AbxCOVID.pdf" target="_blank" class="fw-bold drp">Osler's guidance on antimicrobial therapy in COVID-19 pneumonia.</a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="row justify-content-center">
+                            <div class="col-12 text-start">
+                                <span class="fw-bold">Baricitinib</span>
+                                <ul>
+                                    <li>Should only be used when <span class="fw-bold">Tocilizumab</span>&nbsp;and&nbsp;<span class="fw-bold">Sarilumab</span>&nbsp;are unavailable</li>
+                                    <li>
+                                        Renal dose adjustment is required <ul>
+                                            <li>eGFR 30-59 mL/minute/1.73 m<sup>2</sup> - 2 mg PO daily</li>
+                                            <li>eGFR 15-29 mL/minute/1.73 m<sup>2</sup> - 2 mg PO q48h</li>
+                                            <li>Avoid in individuals with eGFR less than 15 mL/minute/1.73 m<sup>2</sup></li>
+                                        </ul>
+                                    </li>
+                                    <li>Avoid in individuals who have received IL-6 inhibitors (i.e. Tocilizumab, Sarilumab)</li>
+                                </ul>
+                                Please complete approval form for <a href="https://covidcriticalcare.ca/wp-content/uploads/1_ICU.pdf" class="drp text-primary fw-bold" target="_blank">Immunomodulatory Agents in Severe COVID-19 Illness</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card Sotri outtx d-none">
+                    <div class="card-body">
+                        <h3 class="card-title fw-bold">Treatment Options</h3>
+                        <hr />
+                        <div class="alert alert-success d-flex align-items-center" role="alert">
+                            <div class="d-flex"><i class="fas fa-check-circle me-2"></i></div>
+                            <div class="d-flex text-start">
+                                <p class="m-0 p-0">
+                                    <span class="fw-bold">Sotrovimab</span>&nbsp;500 mg IV x 1 dose
+                            </div>
+                        </div>
+                        <div class="alert alert-primary d-flex align-items-center" role="alert">
+                            <div class="d-flex"><i class="fas fa-exclamation-circle me-2"></i></div>
+                            <div class="d-flex text-start">
+                                <p class="m-0 p-0">
+                                    In cases where Sotrovimab is unavailable, <span class="fw-bold">Remdesivir</span>&nbsp;200 mg x 1 dose, then 100 mg daily x 2 days can be used instead.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="alert alert-danger d-flex align-items-center" role="alert">
+                            <div class="d-flex"><i class="fas fa-exclamation-circle me-2"></i></div>
+                            <div class="d-flex text-start">
+                                <p class="m-0 p-0">
+                                    Bacterial co-infection is uncommon in COVID-19 pneumonia at presentation.&nbsp;<span class="fw-bold">Do not add empiric antibiotics</span>&nbsp;unless a bacterial infection is strongly suspected. For more information, see <a href="Docs/COVID/AbxCOVID.pdf" target="_blank" class="fw-bold drp">Osler's guidance on antimicrobial therapy in COVID-19 pneumonia.</a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="row justify-content-center">
+                            <div class="col-12 text-start">
+                                Please complete approval form for <a href="https://covidcriticalcare.ca/wp-content/uploads/4_Mild_SotriRem.pdf" class="drp text-primary fw-bold" target="_blank">Mild COVID-19 Illness</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card RemOut outtx d-none">
+                    <div class="card-body">
+                        <h3 class="card-title fw-bold">Treatment Options</h3>
+                        <hr />
+
+                        <div class="alert alert-success align-items-center" role="alert">
+                            <div class="d-flex flex-row align-items-center align-middle mb-1">
+
+
+
+                                <p class="align-items-center align-middle m-0"><i class="fas fa-check-circle me-2"></i></p>
+
+                                <p class="m-0 p-0">
+                                    <span class="fw-bold">Remdesivir</span>&nbsp;200 mg IV x 1 dose, then 100 mg IV daily x 2 days
+                                </p>
+                            </div>
+                            <div class="alert alert-warning d-flex align-items-center" role="alert">
+                                <div class="d-flex"><i class="fas fa-exclamation-circle me-2"></i></div>
+                                <div class="d-flex text-start">
+                                    <p class="m-0 p-0">
+                                        Given current supply challenges, <span class="fw-bold">Remdesivir</span>
+                                        &nbsp;is currently being prioritized for individuals who meet the Ontario Science Table's criteria for Tiers 1 and 2 severity.
+                                        For a more information, please see the <a href="https://covid19-sciencetable.ca/" class="drp OslerNavy-text fw-bold" target="_blank">Ontario Science Table COVID-19 Guidelines.</a>
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="alert alert-danger d-flex align-items-center" role="alert">
+                            <div class="d-flex"><i class="fas fa-exclamation-circle me-2"></i></div>
+                            <div class="d-flex text-start">
+                                <p class="m-0 p-0">
+                                    Bacterial co-infection is uncommon in COVID-19 pneumonia at presentation.&nbsp;<span class="fw-bold">Do not add empiric antibiotics</span>&nbsp;unless a bacterial infection is strongly suspected. For more information, see <a href="Docs/COVID/AbxCOVID.pdf" target="_blank" class="fw-bold drp">Osler's guidance on antimicrobial therapy in COVID-19 pneumonia.</a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="row justify-content-center d-none">
+                            <div class="col-12 text-start">
+                                Please complete approval form for <a href="https://covidcriticalcare.ca/wp-content/uploads/4_Mild_SotriRem.pdf" class="drp text-primary fw-bold" target="_blank">Mild COVID-19 Illness</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card notx intx d-none">
+                    <div class="card-body">
+                        <h3 class="card-title fw-bold">Treatment Options</h3>
+                        <hr />
+                        <div class="alert alert-primary align-items-center" role="alert">
+                            <i class="fas fa-exclamation-circle"></i>&nbsp;
+                            <span class="fw-bold">
+                                Supportive Management
+                            </span>
+                            <div class="row justify-content-center">
+                                <div class="col-12 text-center text-md-start">
+                                    There are currently no available therapies based on the patient parameters above. Supportive management and close monitoring are recommended. There may be clinical situations where therapy may be considered outside of the criteria above - an Infectious Disease opinion is required for approval.
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                    </div>
+                </div>
+
+                <div class="card notx outtx d-none">
+                    <div class="card-body">
+                        <h3 class="card-title fw-bold">Treatment Options</h3>
+                        <hr />
+                        <div class="alert alert-primary d-flex align-items-center" role="alert">
+                            <i class="fas fa-exclamation-circle"></i>&nbsp;
+                            <span class="fw-bold">
+                                Supportive Management
+                            </span>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-12 text-center text-md-start">
+                                There are no current therapies available based on the selected criteria. Supportive management and self-monitoring of symptoms are recommended.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mb-1 justify-content-center d-none restartrow">
+                    <div class="col-12 col-md-4 col-xl-5 text-center">
+                        <button class="btn btn-outline-primary reset w-100"><i class="fas fa-undo-alt"></i>&nbsp;Restart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="modal fade" id="disclaimer" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header OslerNavy-text">
+                    <h5 class="modal-title" id="exampleModalLabel"><i class="fas fa-question-circle"></i>&nbsp;About This Algorithm</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-md-10 col-lg-8">
+                            <p>This algorithm has been developed using the Ontario Science Table’s Therapeutic Management of Adult Patients with COVID-19. Information provided through this algorithm does not constitute medical advice or recommendations for any particular patient situation. </p>
+                            <p>See the <a href="https://covid19-sciencetable.ca/" class="drp OslerNavy-text fw-bold" target="_blank">Ontario Science Table COVID-19 Guidelines</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="immunomodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header OslerNavy-text">
+                    <h5 class="modal-title" id="exampleModalLabel"><i class="fas fa-question-circle"></i>&nbsp;Definition: Immunocompromised Patients</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row justify-content-center">
+                        <div class="col-12">
+                            <p>
+                                Examples of immunocompromised or immunosuppressed individuals include: 
+                                <ul>
+                                    <li>Individuals with active treatment for solid tumor and hematologic malignancies</li>
+                                    <li>Receipt of solid-organ transplant and taking immunosuppressive therapy</li>
+                                    <li>
+                                        Receipt of chimeric antigen receptor (CAR)-T-cell or hematopoietic stem cell transplant (within 2 years of transplantation or taking immunosuppression
+                                        therapy)
+                                    </li>
+                                    <li>Moderate or severe primary immunodeficiency (e.g., DiGeorge syndrome, Wiskott-Aldrich syndrome, common variable immunodeficiency, Good’s syndrome, hyper IgE syndrome)</li>
+                                    <li>Advanced or untreated HIV infection</li>
+                                    <li>Active treatment with high-dose corticosteroids (i.e., ≥ 20 mg prednisone or equivalent per day when administered for ≥ 2weeks), alkylating agents, antimetabolites, transplant-related immunosuppressive drugs, cancer chemotherapeutic agents classified as severely immunosuppressive, tumor-necrosis factor (TNF) blockers, and other biologic agents that are immunosuppressive or immunomodulatory</li>
+                                    </ul>
+                                For individuals who are immunosuppressed or receiving immunosuppressants, their condition is considered both an underlying risk factor AND a marker of insufficient ability to mount an immune response to SARS-CoV-2. These individuals should have a reasonable expectation for 1-year survival prior to SARS-CoV-2 infection.
+                            </p>
+                            <p>For more information, please see the <a href="https://covid19-sciencetable.ca/" class="drp OslerNavy-text fw-bold" target="_blank">Ontario Science Table COVID-19 Guidelines</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="riskmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header OslerNavy-text">
+                    <h5 class="modal-title" id="exampleModalLabel"><i class="fas fa-question-circle"></i>&nbsp;Definition: Risk Factors</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row justify-content-center">
+                        <div class="col-12">
+                            <p>
+                                Risk factors include:
+                                <ul>
+                                    <li>Obesity (BMI ≥30)</li>
+                                    <li>Dialysis or stage 5 kidney disease (eGFR less than 15 mL /min/1.73 m<sup>2</sup>)</li>
+                                    <li>Diabetes</li>
+                                    <li>Cerebral palsy</li>
+                                    <li>Intellectual disability of any severity</li>
+                                    <li>Sickle cell disease</li>
+                                    <li>Receiving active cancer treatment</li>
+                                    <li>Solid organ or stem cell transplant recipients</li>
+                                </ul>
+                            </p>
+                            <p>For a more information, please see the <a href="https://covid19-sciencetable.ca/" class="drp OslerNavy-text fw-bold" target="_blank">Ontario Science Table COVID-19 Guidelines</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+            integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+            crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#frame').prop('class', 'col-12');
+            $('#footer').addClass('d-none');
+            $('.reset').on('click', function () {
+                
+                /*
+                $('.tab-pane').removeClass('active');
+                $('.tab-pane').removeClass('show');
+                $('.nav-link').removeClass('active');
+                $('input[type="radio"]').prop('checked', false);
+                $('.headertx').html('');
+                $('.maintx').addClass('d-none');
+                $('.txin').addClass('d-none');
+                $('.topouttxopt').prop('checked', false);
+                $('.topintxopt').prop('checked', false);
+                reset();
+                */
+            });
+            function reset() {
+                $('.outtx').addClass('d-none');
+                $('.intx').addClass('d-none');
+                $('.outtxopt').prop('checked', false);
+                $('.intxopt').prop('checked', false);
+                $('.subr').addClass('d-none');
+            }
+
+            $('.inpill').on('click', function () {
+                reset();
+                $('.topouttxopt').prop('checked', false);
+                $('.topintxopt').prop('checked', false);
+            });
+
+            $('input:radio[name="txloc"]').change(function () {
+                reset();
+                $('.tab-pane').removeClass('active');
+                $('.tab-pane').removeClass('show');
+                $('.nav-link').removeClass('active');
+                $('.topouttxopt').prop('checked', false);
+                $('.topintxopt').prop('checked', false);
+                reset();
+                if (this.id == 'b1') {
+                    $('.headertx').html('Outpatient Management');
+                    $('.txin').addClass('d-none');
+                    $('.maintx').removeClass('d-none');
+                    $('#noox-tab').click();
+                  
+                }
+                if (this.id == 'b2') {
+                    $('.headertx').html('Inpatient Management');
+
+                    $('.maintx').removeClass('d-none');
+                    $('.txin').removeClass('d-none');
+                }
+
+            });
+
+            $('input:radio[name="outtime"]').change(
+                function () {
+                    $('.outtx').addClass('d-none');
+                    $('.intx').addClass('d-none');
+                    if (this.id == 'outtime1') {
+                        $('.imr').removeClass('d-none');
+
+                    }
+                    if (this.id == 'outtime2') {
+                        reset();
+                        if ($('#b1').prop('checked')) {
+                            $('.notx.outtx').removeClass('d-none');
+                        }
+                        if ($('#b2').prop('checked')) {
+                            $('.notx.intx').removeClass('d-none');
+                        }
+
+                    }
+                });
+            $('input:radio[name="imm"]').change(
+                function () {
+                    if (this.id == 'imm1') {
+                        $('.outtx').addClass('d-none');
+                        $('.intx').addClass('d-none');
+                        $('.notx').addClass('d-none');
+                        $('.vaxr').addClass('d-none');
+                        $('.vaxi').prop('checked', false);
+                        $('.rfi').prop('checked', false);
+                        $('.rfr').addClass('d-none');
+                        $('.ai').prop('checked', false);
+                        $('.ar').addClass('d-none');
+                        $('.Sotri').removeClass('d-none');
+                    }
+                    if (this.id == 'imm2') {
+                        $('.outtx').addClass('d-none');
+                        $('.intx').addClass('d-none');
+                        $('.notx').addClass('d-none');
+                        $('.vaxr').addClass('d-none');
+                        $('.vaxi').prop('checked', false);
+                        $('.rfr').addClass('d-none');
+                        $('.ai').prop('checked', false);
+                        $('.ar').addClass('d-none');
+                        $('.vaxi').prop('checked', false);
+                        $('.vaxr').removeClass('d-none');
+                    }
+                });
+            $('input:radio[name="vax"]').change(
+                function () {
+                    $('.Sotri').addClass('d-none');
+                    $('.notx').addClass('d-none');
+                    $('.RemOut').addClass('d-none');
+                    if (this.id == 'vax1') {
+                        $('.RemOut').addClass('d-none');
+                        $('.notx').addClass('d-none');
+                        $('.rfi').prop('checked', false);
+                        $('.rfr').addClass('d-none');
+                        $('.ai').prop('checked', false);
+                        $('.ar').addClass('d-none');
+                        $('.rfi').prop('checked', false);
+                        $('.rfr').removeClass('d-none');
+                    }
+                    if (this.id == 'vax2') {
+                        $('.Sotri').addClass('d-none');
+                        $('.RemOut').addClass('d-none');
+                        $('.notx').addClass('d-none');
+                        $('.rfr').addClass('d-none');
+                        $('.ai').prop('checked', false);
+                        $('.ar').addClass('d-none');
+                        $('.rfi').prop('checked', false);
+                        $('.rfr').removeClass('d-none');
+                    }
+                });
+            $('input:radio[name="rf"]').change(
+                function () {
+                    $('.Sotri').addClass('d-none');
+                    $('.notx').addClass('d-none');
+                    $('.RemOut').addClass('d-none');
+                    $('.ai').prop('checked', false);
+                    $('.ar').removeClass('d-none');
+
+                });
+            $('input:radio[name="age"]').change(
+                function () {
+                    $('.Sotri').addClass('d-none');
+                    $('.notx').addClass('d-none');
+                    $('.RemOut').addClass('d-none');
+
+
+                    if ($('#vax1').prop('checked')) {
+
+                        if (this.id == 'age1') {
+                            $('.Sotri').addClass('d-none');
+                            $('.RemOut').removeClass('d-none');
+                        }
+                        if (this.id == 'age2') {
+
+                            if ($('#rf1').is(':checked')) {
+                                $('.Sotri').addClass('d-none');
+                                $('.RemOut').removeClass('d-none');
+                            }
+                            if ($('#rf2').is(':checked')) {
+                                $('.notx.intx').removeClass('d-none');
+                            }
+                        }
+                        if (this.id == 'age3') {
+                            $('.notx.intx').removeClass('d-none');
+                        }
+                    }
+                    if ($('#vax2').prop('checked')) {
+
+                        if (this.id == 'age1') {
+                            $('.RemOut').addClass('d-none');
+                            $('.Sotri').removeClass('d-none');
+                        }
+                        if (this.id == 'age2') {
+                            if ($('#rf1').is(':checked')) {
+                                $('.RemOut').addClass('d-none');
+                                $('.Sotri').removeClass('d-none');
+                            }
+                            if ($('#rf2').is(':checked')) {
+                                $('.notx.intx').removeClass('d-none');
+                            }
+                        }
+                        if (this.id == 'age3') {
+                            $('.notx.intx').removeClass('d-none');
+                        }
+                    }
+
+                });
+
+            $('input:radio[name="oxy"]').change(
+                function () {
+                    $('.intx').addClass('d-none');
+                    $('.outtx').addClass('d-none');
+                    $('.crpi').prop('checked', false);
+                    $('.crpr').addClass('d-none');
+                    $('.txtimei').prop('checked', false);
+                    $('.txtimer').addClass('d-none');
+                    $('.hosptimei').prop('checked', false);
+                    $('.hosptimer').addClass('d-none');
+
+                    if (this.id == 'oxy2') {
+
+                        $('.crp').prop('checked', false);
+                        $('.crpr').removeClass('d-none');
+                    }
+                    if (this.id == 'oxy1') {
+
+                        $('.txtime').prop('checked', false);
+                        $('.txtimer').removeClass('d-none');
+                    }
+                });
+
+            $('input:radio[name="txtime"]').change(
+                function () {
+                    $('.intx').addClass('d-none');
+                    $('.outtx').addClass('d-none');
+                    $('.hosptimei').prop('checked', false);
+                    $('.hosptimer').addClass('d-none');
+                    if (this.id == 'txtime1') {
+                        $('.RemIn').removeClass('d-none');
+                    }
+                    if (this.id == 'txtime2') {
+                        $('.notx.intx').removeClass('d-none');
+                    }
+                });
+
+
+
+            $('input:radio[name="crp"]').change(
+                function () {
+                    $('.intx').addClass('d-none');
+                    $('.outtx').addClass('d-none');
+                    $('.hosptimei').prop('checked', false);
+                    $('.hosptimer').addClass('d-none');
+
+                    if (this.id == 'crp1') {
+                        if ($('#oxy1').is(':checked')) {
+                            $('.RemIn').removeClass('d-none');
+                        }
+                        if ($('#oxy2').is(':checked')) {
+                            $('.notx.intx').removeClass('d-none');
+                        }
+                    }
+                    if (this.id == 'crp2') {
+                        if ($('#oxy1').is(':checked')) {
+                            $('.RemIn').removeClass('d-none');
+                        }
+                        if ($('#oxy2').is(':checked')) {
+                            $('.hosptime').prop('checked', false);
+                            $('.hosptimer').removeClass('d-none');
+                        }
+                    }
+                });
+            $('input:radio[name="hosptime"]').change(
+                function () {
+                    $('.intx').addClass('d-none');
+                    $('.outtx').addClass('d-none');
+
+                    if (this.id == 'hosptime1') {
+
+                        $('.Toci').removeClass('d-none');
+                    }
+                    if (this.id == 'hosptime2') {
+                        $('.notx.intx').removeClass('d-none');
+                    }
+                });
+            $('input:radio[name="sevhosptime"]').change(
+                function () {
+                    $('.intx').addClass('d-none');
+                    $('.outtx').addClass('d-none');
+                    if (this.id == 'sevhosptime1') {
+                        $('.TociSev').removeClass('d-none');
+                    }
+                    if (this.id == 'sevhosptime2') {
+                        $('.notx.intx').removeClass('d-none');
+                    }
+                });
+
+        });
+    </script>
+</body>
+
+</html>
