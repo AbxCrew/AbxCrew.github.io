@@ -1,0 +1,98 @@
+DrugName,Formulary,Route,Ndose,NdoseSub,RenalDosing,restriction,restrictionText,autosub,autosubTextOriginal,autosubTextNew,autosubException,ti,tiTextOriginal,tiTextNew,tiException,BO,BOText,IVPO,IV_IVPO,PO_IVPO
+Acyclovir IV,R,IV,5-10 mg/kg q8h,Higher doses (10-12.5 mg/kg q8h) can be used for serious HSV infections involving the CNS<br>Dosing based on adjusted body weight,acyc,Y,Infectious Disease Service & Critical Care Medicine <strong>OR</strong> for the treatment of Herpes encephalitis,N,,,,N,,,,,,,,
+Amikacin IV,N,IV,"<p>See <a href=""Docs/AMG.pdf"" target=""_blank"">Aminoglycoside Dosing Guide</a></p>",,DOC,Y,Infectious Disease Service,N,,,,,,,,,,,,
+Amoxicillin PO,Y,PO,500 mg - 1000 mg PO TID,"1000 mg PO TID recommended for systemic infections (e.g. bacteremia, pyelonephritis, etc.)",amox,N,,N,,,,,,,,,,,,
+Amoxicillin-Clavulanate PO,Y,PO,875 mg/125 mg PO BID,,AmoxClav,N,,Y,Amoxicillin Clavulanate 500/125 mg PO TID,Amoxicillin Clavulanate 875/125 mg PO BID,,,,,,,,,,
+Ampicillin IV,Y,IV,2 g q4-6h,,amp,N,,Y,Ampicillin oral caps/susp any dose,Amoxicillin oral caps/susp same dose q8h,,,,,,,,Y,Ampicillin IV 1-2 g q6-8h,Amoxicillin PO 500 mg TID
+Azithromycin,Y,IVPO,250-500 mg q24h,,Azith,N,,N,,,,,,,,,,Y,Azithromycin IV 500 mg q24h,Azithromycin PO 500 mg daily
+Caspofungin IV,R,IV,<strong>Loading dose:</strong>&nbsp;70 mg<br/><strong>Maintenance dose:</strong>&nbsp;50 mg IV q24h,,Casp,Y,"Infectious Disease Service, Critical Care Medicine & for the treatment of febrile neutropenia",N,,,,,,,,,,,,
+Cefazolin IV,Y,IV,2 g q8h,,Cefaz,N,,Y,Cefazolin IV 1 g q6-8h,Cefazolin IV 2 g q8h,,,,,,,,Y,Cefazolin IV 1-2 g q8h,"Cephalexin PO 500 mg QID</span></div></div><div class=""row justify-content-center""><div class=""col-12 text-muted""><small>Only for uncomplicated urinary tract infections (i.e. cystitis)</small></div></div><span>"
+Cefixime PO,Y,PO,400 mg PO q24h,,Cefix,N,,N,,,,,,,,,,,,
+Ceftazidime IV,R,IV,2 g IV q8h,,Ceftaz,Y,"For patients with a previous history of <em>Pseudomonas sp.</em>, or in patients with active infections due to Pseudomonas",Y,Ceftazidime 1 g IV q8h,Ceftazidime 2 g IV q8h,,,,,,,,,,
+Ceftolozane-Tazobactam,N,IV,"1.5 g IV q8h <br> <span class=""text-muted"">3 g IV q8h recommended for infections involving <em>P.aeruginosa</em></span>",,Ceftol,Y,Infectious Disease Service,N,,,,,,,,,,,,
+Ceftriaxone IV,Y,IV,1 g IV q24h,"2 g IV q24h if weight > 100 kg or in cases of osteomyelitis, deep-seated infections, or infective endocarditis<br>2 g IV q12h in meningitis, or for synergy in E.faecalis endocarditis",Ceftri,N,,Y,Ceftriaxone IV all dosing regimens,Ceftriaxone IV 1 g q24h,"CNS infections, ICU admission, Endocarditis, Osteomyelitis, or Patient weight greater than 100 kg",N,,,,,,,,
+Cefuroxime PO,Y,PO,500 mg BID,,Cefur,N,,N,,,,,,,,,,,,
+Cephalexin PO,Y,PO,500 mg - 1000 mg QID,1000 mg QID recommended for most systemic infections,Cephal,N,,Y,Cephalexin at any dose,Cephalexin 500 mg PO q6h,"CrCl less than 40 ml/min, paediatrics, used as prophylaxis",,,,"MAC therapy, H.pylori, paediatric patients",,,,,
+Ciprofloxacin IV,Y,IV,400 mg q12h,400 mg q8h for infections involving <em>P.aeruginosa</em>,CiproIV,N,,Y,Ciprofloxacin 200 mg IV q12h,Ciprofloxacin 400 mg IV q24h,,,,,,,,Y,Cipro,
+Ciprofloxacin PO,Y,PO,500 mg BID,750 mg BID for infections involving <em>P.aeruginosa</em>,CiproPO,N,,Y,Ciprofloxacin 250 mg PO BID,Ciprofloxacin 500 mg PO daily,,,,,,,,,,
+Clarithromycin PO,N,PO,1 g q24h (XL dose)<br>500 mg BID,,Clari,N,,,,,,Y,Clarithromycin PO all dosage regimens,Azithromycin 500 mg PO daily,,,,,,
+Clindamycin IV,Y,IV,600 mg q8h,"900 mg q8h considered for toxic shock syndrome, necrotizing infections or CNS infections",ClindIV,N,,Y,Clindamycin IV all dosage regimens,Clindamycin 600 mg IV q8h,,"Pelvic Inflammatory Disease, GBS, Cerebral Toxoplasmosis, Toxic Shock Syndrome, or Postpartum Endometritis",,,,,,Y,Clindamycin IV 600 mg q8h,Clindamycin PO 450 mg TID
+Clindamycin PO,Y,PO,300-450 mg q6-8h,,ClindPO,N,,,,,,,,,,,,,,
+Cloxacillin IV,Y,IV,2 g q4h,,Clox,N,,N,,,,,,,,,,,,
+Colistin IV,N,IV,<strong>Loading dose:</strong>&nbsp;4 mg/kg (weight should be the lesser of actual or ideal weight)<br/><strong>Maintenance dose (starting 12 hours post-load):</strong>&nbsp;360 mg divided q12h,,Colis,Y,Infectious Disease Service,,,,,,,,,,,,,
+Daptomycin IV,N,IV,6 mg/kg q24h,"Doses of 8-10 mg/kg q24h have been used in severe infections, and infections involving <em>Enterococcus sp.</em>",Dapto,Y,Infectious Disease Services,N,,,,,,,,,,,,
+Doxycycline PO,Y,PO,100 mg BID,,Doxy,N,,,,,,,,,,,,,,
+Ertapenem IV,Y,IV,1 g q24h,,Erta,N,,,,,,,,,,,,,,
+Fidaxomicin,N,PO,200 mg q12h x 10 days,,Fidax,Y,Infectious Disease Service,,,,,,,,,,,,,
+Fluconazole,Y,IVPO,<strong>Loading dose:</strong>&nbsp;800 mg<br><strong>Maintenance Dose:</strong>&nbsp;400 mg q24h,Dosage ranges from 200-800 mg q24h depending on indication,Fluc,Y,"IV formulation is restricted to Infectious Disease Service, Critical Care Medicine & for the treatment of febrile neutropenia",,,,,,,,,,,Y,Fluconazole IV any dose & frequency,Fluconazole PO same dose & frequency
+Fosfomycin PO,R,PO,"<strong>Uncomplicated cystitis:</strong>&nbsp;3 g x 1 dose<br><strong>Cystitis in males (i.e. ""complicated"" cystitis)</strong> - 3 g q48h x 3 doses","Outside of the above mentioned indications, Fosfomycin therapy is <span class=""text-danger"">not indicated</span> (e.g. pyelonephritis, UTI with fever/bacteremia)",Fosfo,Y,Treatment of cystitis with ESBL <em>E.coli</em> or <em>E.faecalis</em> where no oral alternatives exist. <em>An Infectious Disease consult is required outside of this indication.</em>,,,,,,,,,,,,,
+Gentamicin IV,Y,IV,"<p>See <a href=""Docs/AMG.pdf"" target=""_blank"">Aminoglycoside Dosing Guide</a></p>",,DOC,N,,,,,,,,,,,,,,
+Levofloxacin,Y,IVPO,750 mg q24h,,Levo,N,,,,,,,,,,,,Y,Levofloxacin IV any dose & frequency,Levofloxacin PO same dose & frequency
+Linezolid,R,IV,600 mg q12h,,Linez,Y,Infectious Disease Service & Critical Care Medicine,,,,,,,,,,,Y,Linezolid IV 600 mg q12h,Linezolid PO 600 mg BID
+Meropenem IV,R,IV,500 mg q6h,"2 g q8h recommended for complicated, deep-seated infections",Mero,Y,Infectious Disease Service & Critical Care Medicine,Y,Meropenem 1 g IV q8h,Meropenem 500 mg IV q6h,"Deep-seated infections (e.g. CNS and Bone infections, endocarditis) typically require higher doses (i.e. 2 g IV q8h)",,,,,,,,,
+Metronidazole,Y,IVPO,500 mg q12h,"500 mg q8h for C.difficile, CNS and parasitic infections",Metro,N,,Y,Metronidazole 500 mg IV/PO q6-8h,Metronidazole 500 mg IV/PO q12h,"Clostridium difficile colitis, CNS infections",,,,,,,Y,Metronidazole IV any dose & frequency,Metronidazole PO same dose & frequency
+Moxifloxacin,Y,IVPO,400 mg q24h,,Moxi,N,,,,,,,,,,,,Y,Moxifloxacin IV 400 mg q24h,Moxifloxacin PO 400 mg daily
+Nitrofurantoin PO,Y,PO,100 mg PO BID (macrocrystals/MacroBID)<br>50 mg PO QID (nitrodantin),,Nitro,N,,,,,,Y,Nitrofurantoin 50 mg PO QID<br>MacroBID 100 mg PO BID,MacroBID 100 mg PO BID<br>Nitrofurantoin 50 mg PO/NG QID,"<strong>Note:</strong>&nbsp;MacroBID is intended to be used for all patients without enteral feeding tubes. In patients with feeding tubes, orders for MacroBID should be changed to Nitrofurantion 50mg QID for administration.",,,,,
+Oseltamivir PO,Y,PO,<strong>Treatment Dose:</strong>&nbsp;75 mg PO BID x 5 days<br><strong>Prophylaxis Dose:</strong>&nbsp;75 mg PO q24h,,oseltam,N,,Y,Oseltamivir indicated for treatment,Oseltamivir at same dose with a 5 day stop date,,,,,,,,,,
+Penicillin G IV,Y,IV,12-24 million units (divided q4-6h),,Pen,N,,,,,,,,,,,,,,
+Piperacillin-Tazobactam IV,Y,IV,4.5 g q8h,4.5 g q6h for infections with suspected or confirmed <em>P.aeruginosa</em>,Taz,N,,Y,Tazo," <div class=""col-12"">
+                                                    <div class=""row pl-3"">
+                                                        <div class=""col-6"">Piperacillin-Tazobactam 3.375 g IV q6h</div>
+                                                        <div class=""col-6"">Piperacillin-Tazobactam 4.5 g IV q8h</div>
+
+                                                    </div>
+                                                    <div class=""row pl-3"">
+                                                        <div class=""col-12"">All other doses:</div>
+                                                    </div>
+                                                    <div class=""row pl-4"">
+                                                        <div class=""col-12""><em><u>If CrCl greater than or equal to 20 ml/min</u></em></div>
+                                                    </div>
+                                                    <div class=""row pl-4"">
+                                                        <div class=""col-6"">
+                                                            Any dose & no indication for high-dose regimen
+                                                        </div>
+                                                        <div class=""col-6"">
+                                                            Piperacillin-Tazobactam 4.5 g IV q8h
+                                                        </div>
+
+                                                    </div>
+                                                    <div class=""row pl-4"">
+                                                        <div class=""col-6"">
+                                                            Any dose & high-dose regimen indicated
+                                                        </div>
+                                                        <div class=""col-6"">
+                                                            Piperacillin-Tazobactam 4.5 g IV q6h
+                                                        </div>
+
+                                                    </div>
+                                                    <div class=""row pl-4"">
+                                                        <div class=""col-12""><em><u>If CrCl less than 20 ml/min (excluding dialysis)</u></em></div>
+                                                    </div>
+                                                    <div class=""row pl-4"">
+                                                        <div class=""col-6"">
+                                                            Any dose & no indication for high-dose regimen
+                                                        </div>
+                                                        <div class=""col-6"">
+                                                            Piperacillin-Tazobactam 2.25 g IV q8h
+                                                        </div>
+
+                                                    </div>
+                                                    <div class=""row pl-4"">
+                                                        <div class=""col-6"">
+                                                            Any dose & high-dose regimen indicated
+                                                        </div>
+                                                        <div class=""col-6"">
+                                                            Piperacillin-Tazobactam 2.25 g IV q6h
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <div class=""col-12"">
+                                                    <br />
+                                                    <span class=""text-muted""><small><strong>Criteria for high-dose regimen:</strong><br />Hospital-acquired infection, history of colonization or active infection with P.aeruginosa, Febrile Neutropenia</small></span>
+                                                </div>",,N,,,,,,,,
+SMX/TMP,Y,IVPO,"See <a href=""Docs/Septra.pdf"" target=""_blank"">SMX/TMP Dosing Guide</a>",,DOC,N,,,,,,,,,,,,Y,Septra,
+Tigecycline IV,N,IV,"<strong>High dose:</strong>&nbsp;200 mg load, followed by 100 mg q12h<br><strong>Normal Dose:</strong>&nbsp;100 mg load, followed by 50 mg q12h",,Tige,Y,Infectious Disease Service,,,,,,,,,,,,,
+Tobramycin IV,N,IV,"<p>See <a href=""Docs/AMG.pdf"" target=""_blank"">Aminoglycoside Dosing Guide</a></p>",,DOC,Y,Gentamicin is Osler's formulary aminoglycoside,,,,,,,,,,,,,
+Vancomycin IV,Y,IV,"See <a href=""Docs/Vanco.pdf"" target=""_blank"">Vancomycin Dosing Guide</a>",,DOC,N,,,,,,,,,,,,,,
+Voriconazole,Y,IVPO,<strong>Loading Dose:</strong>&nbsp;6 mg/kg q12h x 2 doses<br><strong>Maintenance Dose:</strong>&nbsp;4 mg/kg q12h,Oral doses of 200-300mg q12h are recommended,Vori,Y,Infectious Disease Service,,,,,,,,,,,,,
